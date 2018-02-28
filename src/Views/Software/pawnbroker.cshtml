@@ -1,0 +1,224 @@
+﻿@using Addon365.WebSync
+@inject IUrls urls
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home";
+}
+
+	
+		<!-- Main page -->
+		<section>
+			
+			<!-- Breadcrumb bar -->
+			<div class="rst-breadcrumb-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<p><b>5</b> Products</p>
+						</div>
+						<div class="col-sm-6">
+							<ul class="breadcrumb">
+								<li>
+									<a href="~/index.html">Home</a>	
+								</li>
+								<li><span>Pawnbroker</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Breadcrumb bar -->
+			
+			<!-- Single Content -->
+			<div class="rst-post-container">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="rst-sidebar">
+
+                                <aside>
+                                    <div class="widget widget_signin">
+                                        <h3>Sign In</h3>
+                                        <div class="rst-signin">
+                                            <form action="~/shortcodes.html">
+                                                <input type="text" name="signin-name" id="signin-name" class="text required" placeholder="Name" />
+                                                <input type="password" name="signin-password" id="signin-password" class="text required" placeholder="Password" />
+                                                <input type="submit" value="start free trial" />
+                                            </form>
+                                        </div>
+                                    </div>
+                                </aside>
+								<aside>
+									<div class="widget widget_categories">
+										<ul>
+                                            @foreach (var p in urls.getUrls.Where<UrlMap>(p => (p.Type == UrlType.Main) && (p.Url != "software/pawnbroker")))
+
+                                                {
+
+                                                <li><a href="~/Software/Pawn-Broker">@p.UrlShortName</a></li>
+                                                }
+                                            
+										</ul>
+									</div>
+								</aside>
+								
+								<aside>
+									<div class="widget widget_popular">
+										<h3>Popular Articles</h3>
+										<form class="rst-search-form rst-search" action="~/shortcodes.html">
+											<input type="text" name="s"  placeholder="Search ..." >
+											<button class="sb"  type="submit"><i class="fa fa-search"></i></button>
+										</form>
+										<div class="rst-popular-video">
+											<ol>
+												<li><a href="article-single.html">Who we are?</a></li>
+												
+											</ol>
+										</div>
+									</div>
+								</aside>
+							</div>
+						</div>
+						<div class="col-sm-8">
+						
+							<!-- Single Content -->
+							<div class="rst-single-content">
+							
+								<!-- Question -->
+								<div class="rst-product-question">
+								
+									
+									<h2>Pawn Pin Software <i class="fa fa-check img-circle rst-is-helpful"></i></h2>
+									<p>PawnPin is a complete Software automation solution for pawn Brokers. It has been specially designed to cater to the technological needs of the pawn shop, pawn broker, pawn broking, gold loan finance, jewel finance services industry. It integrated with accounts that help the pawn broker to maintain their accounts also</p>
+									
+									
+								</div>
+								<!-- Question -->
+								
+								<!-- Answers -->
+								<div class="rst-product-answers">
+								
+									<h3>Overview of Pawnbroker</h3>
+									
+									<div class="rst-product-answer">
+									
+										<!-- Post data -->
+										<div class="rst-postmeta">
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="rst-meta">
+														<span>
+<script language="Javascript">
+document.write("This page was last modified on: " + document.lastModified +"");
+</SCRIPT></span>
+														<span>by Sasi Kumar</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Post data -->
+										
+										<p>Pawn Broking Finance require more features and functionality from a software package than ever before. The newest Window based version, the PawnPin Series of software for Pawn Broking, Pawn Broker, Pawn Shop, Jewel Loan Finance and Gold Finance Companies, has been developed using the latest technologies and greatly expands functionality of previous versions.  Addon’s has recognized the need for a comprehensive series of systems in the pawn broking market that is reliable, easy to use and relevant to the industry.</p>
+										<p>The PawnPin Series is comprised of a base system and key functional areas that offer a wide number of different Loan and Interest scheme types. PawnPin Series is a comprehensive yet user friendly pawn shop program available in both single user and multi-user versions. PawnPin will save your time and money by handling all of these features. Addon’s Pawn Shop Software functionality is user-friendly, quick and powerful in both its functionality and reporting.</p>
+										
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/92Ql2k-yAFk" frameborder="0" allowfullscreen></iframe>
+                                        <p>Integrated Accounting with Pawn Broking Management is an important factor in strengthening any gold loan finance business. With multi level grouping of accounts and built in automatic ledger posting simplifies the whole process. For example when you do new Pawn Ticket entry creation, system will do a payment entry for you, automatically. With Addon’s Pawn Broking software you will get tools to analyze and improve your Profitability.</p>
+									
+                                        
+									</div>
+									
+									<div class="rst-product-answer">
+									
+										
+										<h3>Summary of Key Features</h3>
+										<ol>
+											<li><p>Comprehensive Pawn Ticket, Pawn Receipt, Redemption and Accounts management for your Pawn finance business</p></li>
+											<li><p>Complete solution to automate your Gold loan finance or pawn broking finance business.</p></li>
+											<li><p>Full information is kept on every Loan giving you easy access on all inquiries. Information includes Customer and Guarantors, as well as financial details, current status, Interest schedule, previous loan details, letters, loan transactions, and notes. All information are easily accessed and clearly presented</p></li>
+                                            <li><p>Various type of Pawn Receipts (Part Payment Receipt, Redemption Receipt)</p></li>
+                                            <li><p>Can produce Overdue Letters for early detection and auctioning of arrears. Letters ranging from mild reminders through to sale of non redeemed can be generated.</p></li>
+                                            <li><p>Penalty Interest can be calculated on Overdue Loans.</p></li>
+                                            <li><p>Advanced Search Provision to find the customer quickly.</p></li>
+                                            <li><p>Customer History and Party summary report will allows you to analyze the party status</p></li>
+                                            <li><p>Easily track your pledged item inventory and customer information in one place</p></li>
+                                            <li><p>Multiple location allows you to keep the pledged item with ease</p></li>
+                                            <li><p>Integrated accounting, Re pledging, Auctioning entry can helps the pawn broker to avoid the manuals</p></li>
+                                            <li><p>Comprehensive, flexible and user-friendly reports, in various formats export to excel and Pdf formats, Print to Graphic or Draft.</p></li>
+                                            <li><p>Simple and Multiple Interest Scheme types and payment options</p></li>
+                                            <li><p>Multiple Unlimited Receipts at the same time</p></li>
+
+										</ol>
+										
+										
+										
+										
+									</div>
+								
+								</div>
+								<!-- Answers -->
+								
+								<!-- Comments -->
+								<div id="respond" class="comment-respond">
+									<h2 id="reply-title" class="comment-reply-title">Add Comment</h2>
+									<form action="~/shortcodes.html" id="commentform" class="comment-form" novalidate="novalidate">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" placeholder="Name" class="text required" id="comment-author" name="comment-author" aria-required="true">
+											</div>
+											<div class="col-sm-6">
+												<input type="email" placeholder="Email" class="text required email" id="comment-email" name="comment-email" aria-required="true">
+											</div>
+											<div class="col-sm-12">
+												<textarea placeholder="Message" id="comment-message" name="comment-message" cols="45" rows="8"></textarea>
+											</div>
+											<div class="col-sm-12">
+												<input type="submit" value="Send" class="btn">
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- Comments -->
+								
+							</div>
+							<!-- Single Content -->
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Single Content -->
+			
+            <!-- Social bar -->
+            <div class="rst-socials-bar">
+                <div class="rst-social-item">
+                    <a href="https://www.facebook.com/addontechnologies"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="rst-social-item">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </div>
+                <div class="rst-social-item">
+                    <a href="https://plus.google.com/+addonTechnologiesVellore"><i class="fa fa-google-plus"></i></a>
+                </div>
+
+                <div class="rst-social-item">
+                    <a href="https://www.linkedin.com/company/addon-technologies"><i class="fa fa-linkedin"></i></a>
+                </div>
+
+                <div class="rst-social-item">
+                    <a href="https://in.pinterest.com/addontech"><i class="fa fa-pinterest"></i></a>
+                </div>
+                <div class="rst-social-item">
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+			<!-- Social bar -->
+			
+		</section>
+		<!-- Main page -->
+		
+		
+		

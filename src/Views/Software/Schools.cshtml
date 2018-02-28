@@ -1,0 +1,217 @@
+﻿@using Addon365.WebSync
+@inject IUrls urls
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home";
+}
+<!-- Main page -->
+<section>
+
+    <!-- Breadcrumb bar -->
+    <div class="rst-breadcrumb-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p><b>5</b> Products</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="~/index.html">Home</a>
+                        </li>
+                        <li><span>Schools</span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb bar -->
+    <!-- Single Content -->
+    <div class="rst-post-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="rst-sidebar">
+
+                        <aside>
+                            <div class="widget widget_signin">
+                                <h3>Sign In</h3>
+                                <div class="rst-signin">
+                                    <form action="~/shortcodes.html">
+                                        <input type="text" name="signin-name" id="signin-name" class="text required" placeholder="Name" />
+                                        <input type="password" name="signin-password" id="signin-password" class="text required" placeholder="Password" />
+                                        <input type="submit" value="start free trial" />
+                                    </form>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <aside>
+                            <div class="widget widget_categories">
+                                <ul>
+                                    @foreach (var p in urls.getUrls.Where<UrlMap>(p => (p.Type == UrlType.Main) && (p.Url != "software/schools")))
+                                    {
+                                        <li><a href="~/Software/schools"> @p.UrlShortName </a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </aside>
+                        
+                        <aside>
+                            <div class="widget widget_popular">
+                                <h3>Popular Articles</h3>
+                                <form class="rst-search-form rst-search" action="~/shortcodes.html">
+                                    <input type="text" name="s" placeholder="Search ...">
+                                    <button class="sb" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                                <div class="rst-popular-video">
+                                    <ol>
+                                        <li><a href="article-single.html">Who we are?</a></li>
+
+                                    </ol>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+
+                    <!-- Single Content -->
+                    <div class="rst-single-content">
+
+                        <!-- Question -->
+                        <div class="rst-product-question">
+
+
+                            <h2>School Management Software <i class="fa fa-check img-circle rst-is-helpful"></i></h2>
+                            <p>Automate and streamline the admission process from start to finish to find, engage and enroll the right students for your institution.</p>
+
+
+                        </div>
+                        <!-- Question -->
+                        <!-- Answers -->
+                        <div class="rst-product-answers">
+
+                            <h3>Overview</h3>
+
+                            <div class="rst-product-answer">
+
+                                <!-- Post data -->
+                                <div class="rst-postmeta">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="rst-meta">
+                                                <span>
+                                                    <script language="Javascript">
+document.write("This page was last modified on: " + document.lastModified +"");
+                                                    </script>
+                                                </span>
+                                                <span>by Sasi Kumar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Post data -->
+
+                                <p>Manage the admissions of all the students easily along with student’s basic details, family information, previous school details, transfer and birth certificate and report card with passport sized photo.</p>
+                                <p>Admission of students to a specific academic year in a specific stream, medium , standard and division with ease</p>
+
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/u3ANktk3vUo" frameborder="0" allowfullscreen></iframe>
+                                <p>Management of admission procedure, admission form collection, listing and admitting student is done with the help of single data entry in the centralized database.</p>
+
+
+                            </div>
+
+                            <div class="rst-product-answer">
+
+
+                                <h3>Summary of Key Features</h3>
+                                <ol>
+
+                                    <li><p>Eliminate manual applications with easy-to-fill-out Student admission form software with the ability to search and retrieve data in real-time.</p></li>
+                                    <li><p>Process multiple student admission at once.</p></li>
+                                    <li><p>Replace paper-based admission processes with online forms</p></li>
+                                    <li><p>Real time visibility with student admission & enrollment management software.</p></li>
+                                    <li><p>View student profile for complete admission history.</p></li>
+                                    <li><p>Reduce costs, optimize resources & speed up admission process.</p></li>
+                                    <li><p>Automatically capture student data and register all types of students including new, transfer, continuing, credit and non-credit students.</p></li>
+                                    <li><p>Allows you to manage fee payments with options for invoicing, installment plans, discounts and enable parents to pay online. </p></li>
+                                    <li><p>Access student data from anywhere and streamline evaluation process which allows you to automatically approve or reject applications for specific courses, or assign to staff.</p></li>
+                                    <li><p>Creates unlimited number of biographical and demographical information of applicants.</p></li>
+                                    <li><p>Generate powerful reports that provide insights on the number of prospective students applying for programs, seat allocation and utilization using this software.</p></li>
+                                    <li><p>Manage registration and entire admission process of the students for each academic year</p></li>
+                                    <li><p>Customize multiple stages in the admission process workflow to meet different needs.</p></li>
+                                    <li><p>Easy to use or modify custom admission forms and letters to share with the applicants across website & mobile devices.</p></li>
+                                    <li><p>Reduce costs, optimize resources & speed up admission process.</p></li>
+                                    
+                                </ol>
+
+
+
+
+                            </div>
+
+                        </div>
+                        <!-- Answers -->
+                        <!-- Comments -->
+                        <div id="respond" class="comment-respond">
+                            <h2 id="reply-title" class="comment-reply-title">Add Comment</h2>
+                            <form action="~/shortcodes.html" id="commentform" class="comment-form" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Name" class="text required" id="comment-author" name="comment-author" aria-required="true">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" placeholder="Email" class="text required email" id="comment-email" name="comment-email" aria-required="true">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea placeholder="Message" id="comment-message" name="comment-message" cols="45" rows="8"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="submit" value="Send" class="btn">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Comments -->
+
+                    </div>
+                    <!-- Single Content -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Single Content -->
+    <!-- Social bar -->
+    <div class="rst-socials-bar">
+        <div class="rst-social-item">
+            <a href="https://www.facebook.com/addontechnologies"><i class="fa fa-facebook"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="https://plus.google.com/+addonTechnologiesVellore"><i class="fa fa-google-plus"></i></a>
+        </div>
+
+        <div class="rst-social-item">
+            <a href="https://www.linkedin.com/company/addon-technologies"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <div class="rst-social-item">
+            <a href="https://in.pinterest.com/addontech"><i class="fa fa-pinterest"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+    <!-- Social bar -->
+
+</section>
+<!-- Main page -->

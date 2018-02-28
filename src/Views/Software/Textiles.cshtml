@@ -1,0 +1,214 @@
+﻿@using Addon365.WebSync
+@inject IUrls urls
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home";
+}
+<!-- Main page -->
+<section>
+
+    <!-- Breadcrumb bar -->
+    <div class="rst-breadcrumb-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p><b>5</b> Products</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="~/index.html">Home</a>
+                        </li>
+                        <li><span>Textiles</span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb bar -->
+    <!-- Single Content -->
+    <div class="rst-post-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="rst-sidebar">
+
+                        <aside>
+                            <div class="widget widget_signin">
+                                <h3>Sign In</h3>
+                                <div class="rst-signin">
+                                    <form action="~/shortcodes.html">
+                                        <input type="text" name="signin-name" id="signin-name" class="text required" placeholder="Name" />
+                                        <input type="password" name="signin-password" id="signin-password" class="text required" placeholder="Password" />
+                                        <input type="submit" value="start free trial" />
+                                    </form>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside>
+                            <div class="widget widget_categories">
+                                <ul>
+                                    @foreach (var p in urls.getUrls.Where<UrlMap>(p => (p.Type == UrlType.Main) && (p.Url != "software/textiles")))
+                                    {
+                                        <li><a href="~/Software/textiles"> @p.UrlShortName </a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </aside>
+                        
+                        <aside>
+                            <div class="widget widget_popular">
+                                <h3>Popular Articles</h3>
+                                <form class="rst-search-form rst-search" action="~/shortcodes.html">
+                                    <input type="text" name="s" placeholder="Search ...">
+                                    <button class="sb" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                                <div class="rst-popular-video">
+                                    <ol>
+                                        <li><a href="article-single.html">Who we are?</a></li>
+
+                                    </ol>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+
+                    <!-- Single Content -->
+                    <div class="rst-single-content">
+
+                        <!-- Question -->
+                        <div class="rst-product-question">
+
+
+                            <h2>Textiles Software <i class="fa fa-check img-circle rst-is-helpful"></i></h2>
+                            <p> Textiles software offers a diverse range of interconnected modules designed to support best practices specifically in the textiles industry.</p>
+
+
+                        </div>
+                        <!-- Question -->
+                        <!-- Answers -->
+                        <div class="rst-product-answers">
+
+                            <h3>Overview</h3>
+
+                            <div class="rst-product-answer">
+
+                                <!-- Post data -->
+                                <div class="rst-postmeta">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="rst-meta">
+                                                <span>
+                                                    <script language="Javascript">
+document.write("This page was last modified on: " + document.lastModified +"");
+                                                    </script>
+                                                </span>
+                                                <span>by Sasi Kumar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Post data -->
+
+                                <p>Textile software aims to execute better task control, coherence and efficient time utilization along with stringent data security and integrity.</p>
+                                <p>The necessary information of the customer,stock information and warehouse detail of a textile industry having different branches has to be maintained in an organized manner in such a way that it can be easily retrieved.</p>
+
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/kPXTBZPc1Ac" frameborder="0" allowfullscreen></iframe>
+                                <p>It will help in managing activities in the Textiles efficiently and effectively.  We will customize the application based on your requirement.</p>
+                               
+
+                            </div>
+
+                            <div class="rst-product-answer">
+
+
+                                <h3>Summary of Key Features</h3>
+                                <ol>
+                                    <li>Allows users to maintain records of customers, suppliers, their orders, raw materials, stock availability as well as bill generation</li>
+                                    <li><p>Generate Customer reports, Supplier reports, sales and purchase reports as well as raw material’s reports in the form of crystal reports</p></li>
+                                    <li><p>Easy to search and update Customer or supplier records by their Id</p></li>
+                                    <li><p>Reduce Labor cost/Paper work and increase you profit and efficiency growth.</p></li>
+                                    <li><p>Report on Daily/Weekly/Monthly Profit report</p></li>
+                                    <li><p>Keep track of actual and Sale value of stock and also the number of items</p></li>
+                                    <li><p>Allows to create vendor information and also to mention the customer information in the bill</p></li>
+                                    <li><p>Auto recovery of Bill for unsaved bill due to Power Off</p></li>
+                                    <li><p>Item wise Report with making and wastage.</p></li>
+                                    <li><p>Easily track your pledged item inventory and customer information in one place</p></li>
+                                    <li><p>Self-defined printing formats & orders in softcopy</p></li>
+                                    <li><p>Multiple location allows you to keep the pledged item with ease</p></li>
+                                    <li><p>Comprehensive, flexible and user-friendly reports, in various formats export to excel and Pdf formats, Print to Graphic or Draft.</p></li>
+                                    <li><p>Vendor wise various outstanding reports & reminders</p></li>
+                                    <li><p>Item not received in purchase can be shift to Pending Order</p></li>
+                                </ol>
+
+
+
+
+                            </div>
+
+                        </div>
+                        <!-- Answers -->
+                        <!-- Comments -->
+                        <div id="respond" class="comment-respond">
+                            <h2 id="reply-title" class="comment-reply-title">Add Comment</h2>
+                            <form action="~/shortcodes.html" id="commentform" class="comment-form" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Name" class="text required" id="comment-author" name="comment-author" aria-required="true">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" placeholder="Email" class="text required email" id="comment-email" name="comment-email" aria-required="true">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea placeholder="Message" id="comment-message" name="comment-message" cols="45" rows="8"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="submit" value="Send" class="btn">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Comments -->
+
+                    </div>
+                    <!-- Single Content -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Single Content -->
+    <!-- Social bar -->
+    <div class="rst-socials-bar">
+        <div class="rst-social-item">
+            <a href="https://www.facebook.com/addontechnologies"><i class="fa fa-facebook"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="https://plus.google.com/+addonTechnologiesVellore"><i class="fa fa-google-plus"></i></a>
+        </div>
+
+        <div class="rst-social-item">
+            <a href="https://www.linkedin.com/company/addon-technologies"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <div class="rst-social-item">
+            <a href="https://in.pinterest.com/addontech"><i class="fa fa-pinterest"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+    <!-- Social bar -->
+
+</section>
+<!-- Main page -->

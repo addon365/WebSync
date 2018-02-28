@@ -1,0 +1,213 @@
+﻿@using Addon365.WebSync
+@inject IUrls urls
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home";
+}
+<!-- Main page -->
+<section>
+
+    <!-- Breadcrumb bar -->
+    <div class="rst-breadcrumb-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p><b>5</b> Products</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="~/index.html">Home</a>
+                        </li>
+                        <li><span>ShoeMarts</span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb bar -->
+    <!-- Single Content -->
+    <div class="rst-post-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="rst-sidebar">
+
+                        <aside>
+                            <div class="widget widget_signin">
+                                <h3>Sign In</h3>
+                                <div class="rst-signin">
+                                    <form action="~/shortcodes.html">
+                                        <input type="text" name="signin-name" id="signin-name" class="text required" placeholder="Name" />
+                                        <input type="password" name="signin-password" id="signin-password" class="text required" placeholder="Password" />
+                                        <input type="submit" value="start free trial" />
+                                    </form>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <aside>
+                            <div class="widget widget_categories">
+                                <ul>
+                                    @foreach (var p in urls.getUrls.Where<UrlMap>(p => (p.Type == UrlType.Main) && (p.Url != "software/shoemarts")))
+                                    {
+                                        <li><a href="~/Software/shoemarts"> @p.UrlShortName </a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </aside>
+                       
+                        <aside>
+                            <div class="widget widget_popular">
+                                <h3>Popular Articles</h3>
+                                <form class="rst-search-form rst-search" action="~/shortcodes.html">
+                                    <input type="text" name="s" placeholder="Search ...">
+                                    <button class="sb" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                                <div class="rst-popular-video">
+                                    <ol>
+                                        <li><a href="article-single.html">Who we are?</a></li>
+
+                                    </ol>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+
+                    <!-- Single Content -->
+                    <div class="rst-single-content">
+
+                        <!-- Question -->
+                        <div class="rst-product-question">
+
+
+                            <h2>ShoeMart Software <i class="fa fa-check img-circle rst-is-helpful"></i></h2>
+                            <p>Providing a proper package to handle overall financial transaction going within or outside the shop related to this business process.</p>
+
+
+                        </div>
+                        <!-- Question -->
+                        <!-- Answers -->
+                        <div class="rst-product-answers">
+
+                            <h3>Overview</h3>
+
+                            <div class="rst-product-answer">
+
+                                <!-- Post data -->
+                                <div class="rst-postmeta">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="rst-meta">
+                                                <span>
+                                                    <script language="Javascript">
+document.write("This page was last modified on: " + document.lastModified +"");
+                                                    </script>
+                                                </span>
+                                                <span>by Sasi Kumar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Post data -->
+
+                               <p>Check stock, get reports on sales and purchase of products from suppliers and get information on their regular customers to provide special discounts.</p>
+                                <p>The user can also search for any particular product using price and size options as well as using product code options to check whether it is available or not.</p>
+
+
+                               <img src="~/images/product/shoe1.jpg" width="700" />
+                                <p> Software is committed to provide the best supporting system for the Retail & Distribution Business upgrading itself from time to time according to the market needs.</p>
+
+
+                            </div>
+
+                            <div class="rst-product-answer">
+
+
+                                <h3>Summary</h3>
+                                <ol>
+
+                                    <li><p>Bill section will generate bill details such as bill number which will be unique for each customer and supplier.</p></li>
+                                    <li><p>Order Analysis on Sales Order, Purchase Order & Current Stock</p></li>
+                                    <li><p>Bill will include product type, size, number of items purchased, tax rate, total rate along with customer name and address.</p></li>
+                                    <li><p>Able to prepare balance sheet for their business transactions for a particular date, between given period, weekly basis or monthly basis or as per user requirement.</p></li>
+                                    <li><p>Keep track of actual and Sale value of stock and also the number of items</p></li>
+                                    <li><p>Allows to create vendor information and also to mention the customer information in the bill</p></li>
+                                    <li><p>Auto recovery of Bill for unsaved bill due to Power Off</p></li>
+                                    <li><p>Self-defined printing formats & orders in softcopy</p></li>
+                                    <li><p>Comprehensive, flexible and user-friendly reports, in various formats export to excel and Pdf formats, Print to Graphic or Draft.</p></li>
+                                    <li><p>Vendor wise various outstanding reports & reminders</p></li>
+                                    <li><p>Item not received in purchase can be shift to Pending Order</p></li>
+                                </ol>
+
+
+
+
+                            </div>
+
+                        </div>
+                        <!-- Answers -->
+                        <!-- Comments -->
+                        <div id="respond" class="comment-respond">
+                            <h2 id="reply-title" class="comment-reply-title">Add Comment</h2>
+                            <form action="~/shortcodes.html" id="commentform" class="comment-form" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Name" class="text required" id="comment-author" name="comment-author" aria-required="true">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" placeholder="Email" class="text required email" id="comment-email" name="comment-email" aria-required="true">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea placeholder="Message" id="comment-message" name="comment-message" cols="45" rows="8"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="submit" value="Send" class="btn">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Comments -->
+
+                    </div>
+                    <!-- Single Content -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Single Content -->
+    <!-- Social bar -->
+    <div class="rst-socials-bar">
+        <div class="rst-social-item">
+            <a href="https://www.facebook.com/addontechnologies"><i class="fa fa-facebook"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="https://plus.google.com/+addonTechnologiesVellore"><i class="fa fa-google-plus"></i></a>
+        </div>
+
+        <div class="rst-social-item">
+            <a href="https://www.linkedin.com/company/addon-technologies"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <div class="rst-social-item">
+            <a href="https://in.pinterest.com/addontech"><i class="fa fa-pinterest"></i></a>
+        </div>
+        <div class="rst-social-item">
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+    <!-- Social bar -->
+
+</section>
+<!-- Main page -->
