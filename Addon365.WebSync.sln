@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Addon365.WebSync", "src\Addon365.WebSync.csproj", "{729FA34B-4ECD-4B4B-9711-9A78C4EA8488}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Addon365.WebSync", "WebSync\src\Addon365.WebSync.csproj", "{729FA34B-4ECD-4B4B-9711-9A78C4EA8488}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Addon365.Models", "Models\src\Addon365.Models.csproj", "{678DEB02-0706-4EFC-8A34-AB0C7A7054A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{729FA34B-4ECD-4B4B-9711-9A78C4EA8488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{729FA34B-4ECD-4B4B-9711-9A78C4EA8488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{729FA34B-4ECD-4B4B-9711-9A78C4EA8488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678DEB02-0706-4EFC-8A34-AB0C7A7054A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678DEB02-0706-4EFC-8A34-AB0C7A7054A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678DEB02-0706-4EFC-8A34-AB0C7A7054A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678DEB02-0706-4EFC-8A34-AB0C7A7054A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
