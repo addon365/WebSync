@@ -8,7 +8,7 @@ namespace Addon365.Models
     {
         public Guid LicensedMachineId { get; set; }
         public string CustomId { get; set; }
-        public string ComputerId { get; set; }
+        public string DeviceId { get; set; }
         public License License { get; set; }
         
     }
