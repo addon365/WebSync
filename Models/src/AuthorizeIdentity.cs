@@ -8,10 +8,12 @@ namespace Addon365.Models
     {
         public Guid AuthorizeIdentityId { get; set; }
 
-        public License License { get; set; }
+        public Identifier Identifier { get; set; }
 
         public string Provider { get; set; }
 
         public string Identity { get; set; }
+
+        public DateTime AuthorizeDate { get; set; }
     }
 }

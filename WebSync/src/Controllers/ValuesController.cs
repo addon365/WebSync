@@ -15,7 +15,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Addon365.WebSync.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Values")]
     public class ValuesController : Controller
     {
         

@@ -38,7 +38,7 @@ namespace Addon365.WebSync
         {
             services.AddDbContext<SyncAppContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            
+
             services.AddMvc();
             services.AddAuthentication(options =>
             {
@@ -51,9 +51,9 @@ namespace Addon365.WebSync
             {
                 googleOptions.ClientId = Configuration["Google:ClientId"];
                 googleOptions.ClientSecret = Configuration["Google:ClientSecret"];
-                googleOptions.CallbackPath = new PathString("/signin-github");
-                googleOptions.AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/auth";
-                googleOptions.TokenEndpoint = "https://accounts.google.com/o/oauth2/token";
+                //googleOptions.CallbackPath = new PathString("/signin-github");
+                //googleOptions.AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/auth";
+                //googleOptions.TokenEndpoint = "https://accounts.google.com/o/oauth2/token";
 
             })
     .AddJwtBearer(jwtBearerOptions =>
