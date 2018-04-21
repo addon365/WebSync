@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Addon365.Models
 {
-    class AuthorizeIdentity
+    class AuthorizeIdentity : BaseModel
     {
-        public Guid AuthorizeIdentityId { get; set; }
 
-        public Identifier Identifier { get; set; }
+
+        public User User { get; set; }
 
         public string Provider { get; set; }
 
@@ -17,3 +17,4 @@ namespace Addon365.Models
         public DateTime AuthorizeDate { get; set; }
     }
 }
+

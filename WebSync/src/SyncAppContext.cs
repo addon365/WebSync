@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Addon365.Models.Leads;
 
 namespace Addon365.WebSync.DAL
 {
@@ -17,15 +18,17 @@ namespace Addon365.WebSync.DAL
         }
 
 
-        public DbSet<Identifier> Identifiers { get; set; }
+        public DbSet<Profile> Identifiers { get; set; }
         public DbSet<License> Licenses { get; set; }
         public DbSet<LicensedMachine> LicensedMachines { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Report> Reports { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Lead> Leads { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Identifier>().ToTable("Identifier");
+            modelBuilder.Entity<Profile>().ToTable("Identifier");
             modelBuilder.Entity<License>().ToTable("License");
             modelBuilder.Entity<LicensedMachine>().ToTable("LicensedMachine");
             modelBuilder.Entity<Product>().ToTable("Product");
@@ -33,4 +36,8 @@ namespace Addon365.WebSync.DAL
 
         }
     }
+   
 }
+
+
+
