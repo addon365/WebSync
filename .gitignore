@@ -323,5 +323,5 @@ ASALocalRun/
 
 
 #Entity Framework Migration
-WebSync\src\Migrations
+WebSync/src/Migrations/
 

@@ -4,12 +4,14 @@ using System.Text;
 
 namespace Addon365.Models.Leads
 {
-    public class Lead : BaseModel
+    public class Lead
     {
-
+        public Guid LeadId { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public Guid SourceId { get; set; }
+        public string Comments { get; set; }
         public Profile Profile { get; set; }
-        public LeadSourceMaster Source { get; set; }
-
-
+        public User CreatedBy { get; set; }
+        
     }
 }

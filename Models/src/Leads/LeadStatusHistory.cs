@@ -4,11 +4,13 @@ using System.Text;
 
 namespace Addon365.Models.Leads
 {
-    public class LeadStatusHistory : BaseModel
+    public class LeadStatusHistory
     {
-        public Lead Lead { get; set; }
+        public Guid LeadStatusHistoryId { get; set; }
+        public Guid LeadId { get; set; }
         public LeadStatusHistoryMaster Status { get; set; }
         public DateTime StatusDate { get; set; }
+        public string Comments { get; set; }
         public User User { get; set; }
     }
 }

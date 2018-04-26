@@ -15,7 +15,9 @@
     <None Remove="Pages\**" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Antiforgery" Version="2.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
     <PackageReference Include="Octokit" Version="0.28.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.1" />
@@ -48,5 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Models\src\Addon365.Models.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Service\" />
   </ItemGroup>
 </Project>

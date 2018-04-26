@@ -39,68 +39,27 @@ namespace Addon365.WebSync
         }
         private static void Initialize(SyncAppContext context)
         {
-            context.Database.EnsureCreated();
-            if (context.Users.Any())
-                return;
-
-            User[] userEntries = new User[]
+            if (context.Database.EnsureCreated())
             {
+
+                User[] userEntries = new User[]
+                {
+                new User{UserId=Guid.NewGuid(),LoginId="tamil",UserName="Tamil Selvan",Password="pass123"},
                 new User
                 {
-                    Id=Guid.NewGuid(),
-                    UserName="Tamil",
-                    Password="pass123"
-                },
-                new User
-                {
-                    Id=Guid.NewGuid(),
+                    UserId=Guid.NewGuid(),
+                    LoginId="udayan",
                     UserName="udhayan",
                     Password="pass123"
                 }
-            };
-            context.Users.AddRange(userEntries);
-            
-            #region Lead Data
-            Lead[] leads = new Lead[]
-            {
-                new Lead
-                {
-                    Id=Guid.NewGuid(),
-                    Profile=new Profile
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Rahul",
-                        MobileNumer = "9999999999"
-                    },
-                    Source=new LeadSourceMaster
-                    {
-                        Id=Guid.NewGuid(),
-                        Code="JD",
-                        Name="Just Dial"
-                    }
-                },
-                 new Lead
-                {
-                    Id=Guid.NewGuid(),
-                    Profile=new Profile
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Ravi",
-                        MobileNumer = "8888888888"
-                    },
-                    Source=new LeadSourceMaster
-                    {
-                        Id=Guid.NewGuid(),
-                        Code="JD",
-                        Name="Just Dial"
-                    }
-                }
-            };
+                };
+                context.Users.AddRange(userEntries);
+                context.HistoryMasters.AddRange(LeadStatusHistoryMaster.GetMasterData());
+                context.Users.AddRange(userEntries);
+                context.LeadSources.AddRange(LeadSource.GetMasterData());
 
-            #endregion
-
-
-            context.SaveChanges();
+                context.SaveChanges();
+            }
         }
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)

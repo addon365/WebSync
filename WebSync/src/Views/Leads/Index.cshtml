@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Addon365.Models.Leads.Lead>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Profile.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Profile.MobileNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Source.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profile.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profile.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Source.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LeadId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LeadId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LeadId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
