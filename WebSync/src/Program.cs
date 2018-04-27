@@ -20,6 +20,7 @@ namespace Addon365.WebSync
         {
             var host = BuildWebHost(args);
 
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
@@ -54,7 +55,7 @@ namespace Addon365.WebSync
                 }
                 };
                 context.Users.AddRange(userEntries);
-                context.HistoryMasters.AddRange(LeadStatusHistoryMaster.GetMasterData());
+                context.LeadStatuses.AddRange(LeadStatus.GetMasterData());
                 context.Users.AddRange(userEntries);
                 context.LeadSources.AddRange(LeadSource.GetMasterData());
 
@@ -64,6 +65,9 @@ namespace Addon365.WebSync
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+            .UseIISIntegration()
+            .UseSetting("detailedErrors", "true")
+             .CaptureStartupErrors(true)
                 .Build();
     }
 }

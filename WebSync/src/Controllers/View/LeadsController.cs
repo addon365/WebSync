@@ -40,7 +40,9 @@ namespace Addon365.WebSync.Controllers.View
         // GET: Leads
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Leads.ToListAsync());
+            return View(await _context.Leads
+                .Include(leadInfo => leadInfo.Profile)
+                .ToListAsync());
         }
 
         public IActionResult Upload()
@@ -89,7 +91,7 @@ namespace Addon365.WebSync.Controllers.View
             {
                 _context.Leads.AddRange(leads.ToArray());
                 await _context.SaveChangesAsync();
-                return Ok("You data has been updated.");
+                return View(nameof(Index), leads);
             }
         }
 
@@ -119,7 +121,7 @@ namespace Addon365.WebSync.Controllers.View
                 {
                     LeadId = Guid.NewGuid(),
                     Profile = profile,
-                    SourceId = leadViewModel.SourceId
+                    LeadSourceId = leadViewModel.SourceId
                 };
                 _context.Add(profile);
                 _context.Add(lead);

@@ -8,10 +8,12 @@ namespace Addon365.Models.Leads
     {
         public Guid LeadId { get; set; }
         public DateTime CreatedDate { get; set; }
-        public Guid SourceId { get; set; }
+        public Guid LeadSourceId { get; set; }
+        public Guid ProfileId { get; set; }
+        public Guid UserId { get; set; }
         public string Comments { get; set; }
+
+        public LeadSource LeadSource { get; set; }
         public Profile Profile { get; set; }
-        public User CreatedBy { get; set; }
-        
     }
 }

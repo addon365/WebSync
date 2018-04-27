@@ -29,6 +29,7 @@ namespace Addon365.WebSync.Helpers
                     {
                         Lead lead = new Lead();
                         Profile profile = new Profile();
+                        lead.UserId = new Guid("c8a790ae-90b7-4dda-ad1d-fdd97a804b0c");
                         profile.Name = reader.GetString(1);
                         profile.Address1 = reader.GetString(2);
                         profile.Address2 = reader.GetString(3);
@@ -42,7 +43,7 @@ namespace Addon365.WebSync.Helpers
                             return null;
                         profile.MobileNumber = reader.GetDouble(9).ToString();
 
-                        lead.SourceId = sources
+                        lead.LeadSourceId = sources
                         .Where(s => s.Name.CompareTo(reader.GetString(10)) == 0)
                         .FirstOrDefault()
                         .LeadSourceId;

@@ -54,7 +54,7 @@ namespace Addon365.WebSync.Controllers.View
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,MobileNumer")] Profile profile)
+        public async Task<IActionResult> Create([Bind("Id,Name,MobileNumber")] Profile profile)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace Addon365.WebSync.Controllers.View
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,MobileNumer")] Profile profile)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,MobileNumber")] Profile profile)
         {
             if (id != profile.ProfileId)
             {

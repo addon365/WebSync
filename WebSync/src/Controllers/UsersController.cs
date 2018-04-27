@@ -21,6 +21,20 @@ namespace Addon365.WebSync.Controllers
             _context = context;
         }
 
+        [HttpPost]
+        [Route("validate")]
+        public IActionResult ValidateUser([FromBody]LoginViewModel loginViewModel)
+        {
+            User user = _context.Users
+                .Where(u => u.LoginId == loginViewModel.Username
+                        && u.Password == loginViewModel.Password)
+                .FirstOrDefault();
+
+            if (user == null)
+                return NotFound();
+
+            return Ok(user);
+        }
         // GET: api/Users
         [HttpGet]
         public IEnumerable<User> GetUsers()

@@ -27,8 +27,7 @@ namespace Addon365.WebSync.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<Lead> Leads { get; set; }
         public DbSet<LeadSource> LeadSources { get; set; }
-        public DbSet<Profile> Profiles { get; set; }
-        public DbSet<LeadStatusHistoryMaster> HistoryMasters { get; set; }
+        public DbSet<LeadStatus> LeadStatuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,10 +36,11 @@ namespace Addon365.WebSync.DAL
             //modelBuilder.Entity<LicensedMachine>().ToTable("LicensedMachine");
             //modelBuilder.Entity<Product>().ToTable("Product");
             //modelBuilder.Entity<Report>().ToTable("Report");
-
+            modelBuilder.Entity<Profile>()
+                .HasIndex(e => e.MobileNumber)
+                .IsUnique(true);
         }
     }
-
 }
 
 

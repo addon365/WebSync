@@ -7,23 +7,41 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Upload">Upload Leads</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Profile.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Profile.MobileNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Source.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CreatedDate)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.Address1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.Address2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.Pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -34,13 +52,31 @@
                 @Html.DisplayFor(modelItem => item.Profile.Name)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Profile.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profile.Address2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profile.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profile.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profile.Pincode)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Profile.MobileNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Source.Name)
+                @Html.DisplayFor(modelItem => item.CreatedDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
+                @Html.DisplayFor(modelItem =>item.LeadSourceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.LeadId">Edit</a> |
