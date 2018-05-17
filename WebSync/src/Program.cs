@@ -54,10 +54,16 @@ namespace Addon365.WebSync
                     Password="pass123"
                 }
                 };
+               
                 context.Users.AddRange(userEntries);
                 context.LeadStatuses.AddRange(LeadStatus.GetMasterData());
                 context.Users.AddRange(userEntries);
                 context.LeadSources.AddRange(LeadSource.GetMasterData());
+                Addon365.WebSync.Models.SampleData.PopulateLicenseMachine();
+                context.Profiles.AddRange(Addon365.WebSync.Models.SampleData.pro);
+                context.Customers.AddRange(Addon365.WebSync.Models.SampleData.cus);
+                context.Licenses.AddRange(Addon365.WebSync.Models.SampleData.lic);
+                context.LicenseMachines.AddRange(Addon365.WebSync.Models.SampleData.licMac);
 
                 context.SaveChanges();
             }

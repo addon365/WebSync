@@ -4,6 +4,9 @@
 	<RuntimeFrameworkVersion>2.0.3</RuntimeFrameworkVersion>
 
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;EF;NETCOREAPP2_0</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Pages1\**" />
     <Compile Remove="Pages\**" />
@@ -13,6 +16,21 @@
     <EmbeddedResource Remove="Pages\**" />
     <None Remove="Pages1\**" />
     <None Remove="Pages\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Models\src\AuthorizeIdentity.cs" Link="Models\AuthorizeIdentity.cs" />
+    <Compile Include="..\..\Models\src\BaseModel.cs" Link="Models\BaseModel.cs" />
+    <Compile Include="..\..\Models\src\Leads\Lead.cs" Link="Models\Leads\Lead.cs" />
+    <Compile Include="..\..\Models\src\Leads\LeadSourceMaster.cs" Link="Models\Leads\LeadSourceMaster.cs" />
+    <Compile Include="..\..\Models\src\Leads\LeadStatus.cs" Link="Models\Leads\LeadStatus.cs" />
+    <Compile Include="..\..\Models\src\Leads\LeadStatusHistory.cs" Link="Models\Leads\LeadStatusHistory.cs" />
+    <Compile Include="..\..\Models\src\License\Customer.cs" Link="Models\License\Customer.cs" />
+    <Compile Include="..\..\Models\src\License\License.cs" Link="Models\License\License.cs" />
+    <Compile Include="..\..\Models\src\License\LicenseMachine.cs" Link="Models\License\LicenseMachine.cs" />
+    <Compile Include="..\..\Models\src\License\Product.cs" Link="Models\License\Product.cs" />
+    <Compile Include="..\..\Models\src\Profile.cs" Link="Models\Profile.cs" />
+    <Compile Include="..\..\Models\src\Report.cs" Link="Models\Report.cs" />
+    <Compile Include="..\..\Models\src\User.cs" Link="Models\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ExcelDataReader" Version="3.4.0" />
@@ -49,9 +67,8 @@
     <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Models\src\Addon365.Models.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Controllers\Service\" />
+    <Folder Include="Models\License\" />
+    <Folder Include="Models\Leads\" />
   </ItemGroup>
 </Project>

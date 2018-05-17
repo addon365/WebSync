@@ -22,7 +22,7 @@ namespace Addon365.WebSync.Controllers.View
         // GET: Profiles
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Identifiers.ToListAsync());
+            return View(await _context.Profiles.ToListAsync());
         }
 
         // GET: Profiles/Details/5
@@ -33,8 +33,8 @@ namespace Addon365.WebSync.Controllers.View
                 return NotFound();
             }
 
-            var profile = await _context.Identifiers
-                .SingleOrDefaultAsync(m => m.ProfileId == id);
+            var profile = await _context.Profiles
+                .SingleOrDefaultAsync(m => m.Id == id);
             if (profile == null)
             {
                 return NotFound();
@@ -58,7 +58,7 @@ namespace Addon365.WebSync.Controllers.View
         {
             if (ModelState.IsValid)
             {
-                profile.ProfileId = Guid.NewGuid();
+                profile.Id = Guid.NewGuid();
                 _context.Add(profile);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -74,7 +74,7 @@ namespace Addon365.WebSync.Controllers.View
                 return NotFound();
             }
 
-            var profile = await _context.Identifiers.SingleOrDefaultAsync(m => m.ProfileId == id);
+            var profile = await _context.Profiles.SingleOrDefaultAsync(m => m.Id == id);
             if (profile == null)
             {
                 return NotFound();
@@ -89,7 +89,7 @@ namespace Addon365.WebSync.Controllers.View
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,MobileNumber")] Profile profile)
         {
-            if (id != profile.ProfileId)
+            if (id != profile.Id)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace Addon365.WebSync.Controllers.View
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProfileExists(profile.ProfileId))
+                    if (!ProfileExists(profile.Id))
                     {
                         return NotFound();
                     }
@@ -125,8 +125,8 @@ namespace Addon365.WebSync.Controllers.View
                 return NotFound();
             }
 
-            var profile = await _context.Identifiers
-                .SingleOrDefaultAsync(m => m.ProfileId == id);
+            var profile = await _context.Profiles
+                .SingleOrDefaultAsync(m => m.Id == id);
             if (profile == null)
             {
                 return NotFound();
@@ -140,15 +140,15 @@ namespace Addon365.WebSync.Controllers.View
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var profile = await _context.Identifiers.SingleOrDefaultAsync(m => m.ProfileId == id);
-            _context.Identifiers.Remove(profile);
+            var profile = await _context.Profiles.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Profiles.Remove(profile);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProfileExists(Guid id)
         {
-            return _context.Identifiers.Any(e => e.ProfileId == id);
+            return _context.Profiles.Any(e => e.Id == id);
         }
     }
 }

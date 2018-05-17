@@ -28,103 +28,44 @@ namespace Addon365.WebSync.Controllers
             return _context.Licenses;
         }
 
-        // GET: api/Licenses/A100-123
+        // GET: /api/Licenses/12313424
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetLicense([FromRoute] string id)
+        public IEnumerable<License> GetLicense([FromRoute] string id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            //License newlicense = new License();
-            //newlicense.LicenseId = Guid.NewGuid();
-            //newlicense.CustomId = "A100-123";
-            //_context.Licenses.Add(newlicense);
-            //await _context.SaveChangesAsync();
-            var license = await _context.Licenses.SingleOrDefaultAsync(m => m.CustomId == id);
-
-            if (license == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(license);
+            var LicMac=_context.LicenseMachines.SingleOrDefault(n => n.DeviceId == id);
+            return _context.Licenses.Where<License>(m=>m.Id== LicMac.LicenseId);
         }
 
-        // PUT: api/Licenses/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutLicense([FromRoute] Guid id, [FromBody] License license)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// GET: api/Licenses/A100-123
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetLicense([FromRoute] string id)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    //License newlicense = new License();
+        //    //newlicense.LicenseId = Guid.NewGuid();
+        //    //newlicense.CustomId = "A100-123";
+        //    //_context.Licenses.Add(newlicense);
+        //    //await _context.SaveChangesAsync();
+        //    var license = await _context.Licenses.SingleOrDefaultAsync(m => m.LicenseId == id);
 
-            if (id != license.LicenseId)
-            {
-                return BadRequest();
-            }
+        //    if (license == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Entry(license).State = EntityState.Modified;
+        //    return Ok(license);
+        //}
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LicenseExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+       
 
-            return NoContent();
-        }
+      
+      
 
-        // POST: api/Licenses
-        [HttpPost]
-        public async Task<IActionResult> PostLicense([FromBody] License license)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _context.Licenses.Add(license);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetLicense", new { id = license.LicenseId }, license);
-        }
-
-        // DELETE: api/Licenses/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteLicense([FromRoute] Guid id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var license = await _context.Licenses.SingleOrDefaultAsync(m => m.LicenseId == id);
-            if (license == null)
-            {
-                return NotFound();
-            }
-
-            _context.Licenses.Remove(license);
-            await _context.SaveChangesAsync();
-
-            return Ok(license);
-        }
-
-        private bool LicenseExists(Guid id)
-        {
-            return _context.Licenses.Any(e => e.LicenseId == id);
-        }
+       
     }
+
+
 }
