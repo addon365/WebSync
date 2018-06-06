@@ -19,9 +19,10 @@ namespace Addon365.WebSync.DAL
         }
 
 
-        public DbSet<Profile> Identifiers { get; set; }
+        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<License> Licenses { get; set; }
-        public DbSet<LicensedMachine> LicensedMachines { get; set; }
+        public DbSet<LicenseMachine> LicenseMachines { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<User> Users { get; set; }

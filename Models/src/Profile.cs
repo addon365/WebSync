@@ -2,9 +2,9 @@
 
 namespace Addon365.Models
 {
-    public class Profile
+    public class Profile:BaseModel
     {
-        public Guid ProfileId { get; set; }
+       
         public string Name { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }

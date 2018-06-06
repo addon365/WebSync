@@ -21,6 +21,7 @@ using System.Text;
 using Microsoft.Net.Http.Headers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Addon365.WebSync.Helpers;
+using Addon365.Models;
 
 namespace Addon365.WebSync.Controllers.View
 {
@@ -111,9 +112,9 @@ namespace Addon365.WebSync.Controllers.View
         {
             if (ModelState.IsValid)
             {
-                Models.Profile profile = new Models.Profile
+                Profile profile = new Profile
                 {
-                    ProfileId = Guid.NewGuid(),
+                    Id = Guid.NewGuid(),
                     Name = leadViewModel.Name,
                     MobileNumber = leadViewModel.MobileNumber
                 };
