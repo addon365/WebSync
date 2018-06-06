@@ -8,9 +8,13 @@ namespace Addon365.Models.Leads
     {
         public Guid LeadStatusHistoryId { get; set; }
         public Guid LeadId { get; set; }
-        public LeadStatus Status { get; set; }
+        public Guid LeadStatusId { get; set; }
+        public Guid UserId { get; set; }
         public DateTime StatusDate { get; set; }
         public string Comments { get; set; }
-        public User User { get; set; }
+
+        public Lead Lead { get; set; }
+        public User AssignedTo { get; set; }
+        public LeadStatus Status { get; set; }
     }
 }
